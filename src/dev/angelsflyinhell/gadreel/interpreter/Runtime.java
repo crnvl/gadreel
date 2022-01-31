@@ -4,7 +4,6 @@ import dev.angelsflyinhell.gadreel.interpreter.tokens.Token;
 import dev.angelsflyinhell.gadreel.utils.CLO;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Runtime {
 
@@ -22,11 +21,11 @@ public class Runtime {
         }
     }
 
-    private void error(int line, String message) {
+    public static void error(int line, String message) {
         report(line, "", message);
     }
 
-    private void report(int line, String where, String message) {
+    private static void report(int line, String where, String message) {
         System.err.println(CLO.PREFIX + "[line " + line + "] Error " + where + ": " + message);
         Gadreel.hadError = true;
     }
